@@ -31,6 +31,7 @@ private:
         text("Title", (width-150*5)/2, height / 2);
         //Next state
         if (isTrigger(KEY_SPACE)) {
+            Reset();
             State = STATE::PLAY;
         }
     }

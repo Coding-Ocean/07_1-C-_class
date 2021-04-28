@@ -4,15 +4,28 @@
 class CONTAINER
 {
 public:
+    //画像
+    struct IMAGES {
+        int player = 0;
+    }image;
+    //データ
+    struct DATA {
+        struct PLAYER::DATA player;
+    }data;
+    //Functions
     void create()
     {
-        imgPlayer = loadImage("assets/heart.png");
+        loadImages();
         loadData();
+    }
+    void loadImages() {
+        image.player = loadImage("assets/heart.png");
     }
     void loadData()
     {
         data.player.px = width / 2;
         data.player.py = height / 2;
+        data.player.vx = 5;
         data.player.angle = 0;
         data.player.angulerSpeed = 1.0f;
         data.player.r = 255;
@@ -20,11 +33,5 @@ public:
         data.player.b = 200;
         data.player.a = 255;
     }
-    //画像
-    int imgPlayer = 0;
-    //データ
-    struct DATA {
-        struct PLAYER::DATA player;
-    }data;
 };
 

@@ -2,7 +2,7 @@
 #include"PLAYER.h"
 void PLAYER::create(class CONTAINER* c)
 {
-    Img = c->imgPlayer;
+    Img = c->image.player;
     reset(c);
 }
 void PLAYER::reset(class CONTAINER* c)
@@ -11,6 +11,7 @@ void PLAYER::reset(class CONTAINER* c)
 }
 void PLAYER::move()
 {
+    D.px += D.vx;
     D.angle += D.angulerSpeed;
 }
 void PLAYER::draw()
